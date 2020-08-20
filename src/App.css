@@ -1,5 +1,7 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+  background-color: #09d3ac;
+  padding: 20px;
 }
 
 .App-logo {
@@ -19,4 +21,64 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  color: blue;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.form {
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+  text-align: left;
+}
+
+header {
+  text-align: center;
+}
+
+label {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+input {
+  width: 100%;
+  display: inline-block;
+  text-align: right;
+  margin: 5px;
+  padding: 5px;
+}
+button {
+  margin-top: 30px;
+  padding: 10px;
+  color: white;
+  background-color: green;
+  border: none;
+  outline: none;
+}
+
+.readmore {
+  padding: 10px;
+  background-color: white;
+  margin-top: 20px;
+}
+
+.postedat {
+  padding: 10px;
+  background-color: lightblue;
 }
