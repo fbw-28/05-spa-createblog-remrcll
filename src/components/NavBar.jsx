@@ -6,7 +6,7 @@ export default function navBar() {
   return (
     <ul className="navbar">
       <li>
-        <Link to="/"> Home </Link>
+        <Link to="/">Home</Link>
       </li>
       <li>
         <Link to="/create-post">Create A Post</Link>
@@ -15,6 +15,5 @@ export default function navBar() {
         <Link to="/show">Show Current Post</Link>
       </li>
     </ul>
-   
   );
 }
