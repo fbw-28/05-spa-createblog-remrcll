@@ -3,17 +3,6 @@ import { Link } from "react-router-dom";
 // import CurrentPost from "./CurrentPost";
 
 export default class CreatePost extends Component {
-  state = {
-    newContent: [
-      {
-        userName: "",
-        title: "",
-        content: "",
-        postTime: "",
-      },
-    ],
-  };
-
   // onAddItem = () => {
   //   this.setState(state => {
   //     console.log('The link was clicked.')
@@ -31,22 +20,13 @@ export default class CreatePost extends Component {
   //   });
   // };
 
-  componentDidMount() {
-    this.getDate();
-  }
-
-  getDate = () => {
-    let postTime = new Date().toLocaleString();
-    this.setState({ postTime });
-  };
-
   // handleSubmit = (event) => {
   //   event.preventDefault();
   //   this.setState({postTime: new Date().toLocaleString()})
   // };
 
   render() {
-    console.log(this.state);
+    console.log(this.props);
 
     return (
       <div>
@@ -61,8 +41,9 @@ export default class CreatePost extends Component {
               <input
                 type="text"
                 placeholder="Username..."
-                name="username"
-                onChange={(e) => this.setState({ userName: e.target.value })}
+                name="userName"
+                value={this.props.userName}
+                onChange={this.props.saveInput}
               />
             </label>
             <label>
@@ -71,7 +52,8 @@ export default class CreatePost extends Component {
                 type="text"
                 placeholder="Title..."
                 name="title"
-                onChange={(e) => this.setState({ title: e.target.value })}
+                value={this.props.title}
+                onChange={this.props.saveInput}
               />
             </label>
             <label>
@@ -80,22 +62,13 @@ export default class CreatePost extends Component {
                 type="text"
                 placeholder="Content..."
                 name="content"
-                onChange={(e) => this.setState({ content: e.target.value })}
+                value={this.props.content}
+                onChange={this.props.saveInput}
               />
             </label>
           </div>
-          <button key={this.state.title} type="submit" onClick={this.onAddItem}>
-            <Link
-              to={{
-                pathname: `/show/${this.state.title}`,
-                ForwardedUser: this.state.userName,
-                ForwardedTitle: this.state.title,
-                ForwardedContent: this.state.content,
-                ForwardedTime: this.state.postTime,
-              }}
-            >
-              Create a Post
-            </Link>
+          <button type="submit" onClick={this.props.handleSubmit}>
+            Create a Post
           </button>
         </form>
       </div>
